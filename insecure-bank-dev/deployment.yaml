@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: insecure-bank-ap
+  namespace: insecure-bank-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: insecure-bank-ap
+  template:
+    metadata:
+      labels:
+        app: insecure-bank-ap
+    spec:
+      containers:
+        - name: insecure-bank-ap
+          image: docker.io/georgechiu/insecure-bank:v1
+          ports:
+            - containerPort: 8080
+          env:
+            - name: ENV
+              value: "dev"

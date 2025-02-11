@@ -1,0 +1,14 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: insecure-bank-route
+  namespace: insecure-bank-dev
+spec:
+  to:
+    kind: Service
+    name: insecure-bank-ap-service
+  port:
+    targetPort: 8080
+  tls:
+    termination: edge
+  wildcardPolicy: None
