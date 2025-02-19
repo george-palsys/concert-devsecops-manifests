@@ -1,14 +1,14 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  name: insecure-bank-route
-  namespace: insecure-bank-dev
+  name: liberity-route
+  namespace: liberity-dev
 spec:
   to:
     kind: Service
-    name: insecure-bank-ap-service
+    name: liberity-ap-service
   port:
-    targetPort: 8080
+    targetPort: 9080
   tls:
     termination: edge
   wildcardPolicy: None

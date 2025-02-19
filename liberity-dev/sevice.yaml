@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: insecure-bank-ap-service
-  namespace: insecure-bank-dev
+  name: liberity-ap-service
+  namespace: liberity-dev
 spec:
   selector:
-    app: insecure-bank-ap
+    app: liberity-ap
   ports:
     - protocol: TCP
-      port: 8080
-      targetPort: 8080
+      port: 9080
+      targetPort: 9080
   type: ClusterIP
